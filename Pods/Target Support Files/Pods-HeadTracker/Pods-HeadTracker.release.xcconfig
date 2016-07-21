@@ -1,0 +1,9 @@
+CLANG_MODULES_AUTOLINK = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Cordova" "${PODS_ROOT}/Headers/Public/CordovaPlugin-console" "${PODS_ROOT}/Headers/Public/GPUImage" "${PODS_ROOT}/Headers/Public/cordova-plugin-device" "${PODS_ROOT}/Headers/Public/cordova-plugin-device-motion" "${PODS_ROOT}/Headers/Public/cordova-plugin-device-orientation" "${PODS_ROOT}/Headers/Public/phonegap-ios-template"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Cordova" "$PODS_CONFIGURATION_BUILD_DIR/CordovaPlugin-console" "$PODS_CONFIGURATION_BUILD_DIR/GPUImage" "$PODS_CONFIGURATION_BUILD_DIR/cordova-plugin-device" "$PODS_CONFIGURATION_BUILD_DIR/cordova-plugin-device-motion" "$PODS_CONFIGURATION_BUILD_DIR/cordova-plugin-device-orientation"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Cordova" -isystem "${PODS_ROOT}/Headers/Public/CordovaPlugin-console" -isystem "${PODS_ROOT}/Headers/Public/GPUImage" -isystem "${PODS_ROOT}/Headers/Public/cordova-plugin-device" -isystem "${PODS_ROOT}/Headers/Public/cordova-plugin-device-motion" -isystem "${PODS_ROOT}/Headers/Public/cordova-plugin-device-orientation" -isystem "${PODS_ROOT}/Headers/Public/phonegap-ios-template"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Cordova" -l"CordovaPlugin-console" -l"GPUImage" -l"cordova-plugin-device" -l"cordova-plugin-device-motion" -l"cordova-plugin-device-orientation" -framework "AVFoundation" -framework "AssetsLibrary" -framework "CoreLocation" -framework "CoreMedia" -framework "MobileCoreServices" -framework "OpenGLES" -framework "QuartzCore"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
