@@ -1,6 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "GPUImage.h"
 
+@protocol FilterViewControllerDelegate 
+-(void)say:(NSString *)it;
+@end
+
 typedef enum {
     GPUIMAGE_SATURATION,
     GPUIMAGE_CONTRAST,
@@ -121,7 +125,7 @@ typedef enum {
     GPUIMAGE_FILTERGROUP,
     GPUIMAGE_FACES,
     GPUIMAGE_NUMFILTERS
-} GPUImageShowcaseFilterType; 
+} GPUImageShowcaseFilterType;
 
 @interface FilterViewController : UIViewController <GPUImageVideoCameraDelegate>
 {
@@ -142,9 +146,13 @@ typedef enum {
     BOOL faceThinking;
 }
 
-
+@property (nonatomic, assign) id  delegate;
 
 @property IBOutlet UILabel *directionLabel;
+
+@property NSString *connection;
+
+@property (nonatomic, weak) IBOutlet UIButton *but;
 
 
 @property(readwrite, unsafe_unretained, nonatomic) IBOutlet UISlider *filterSettingsSlider;

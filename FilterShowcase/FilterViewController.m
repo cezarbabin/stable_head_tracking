@@ -2,15 +2,23 @@
 #import <CoreImage/CoreImage.h>
 
 @implementation FilterViewController
-@synthesize faceDetector;
+
+@synthesize faceDetector, delegate;
 #pragma mark -
 #pragma mark Initialization and teardown
+
+-(IBAction)butPressed:(id)sender {
+    NSLog(@"pressed");
+    [delegate say:(NSString *)@"whaat"];
+}
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     filterType = GPUIMAGE_FACES;
+    
+    self.connection = @"congratz";
     
     // ADDING THE LINE IN THE MIDDLE
     // UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(160, 0 ,1, self.view.bounds.size.height)];

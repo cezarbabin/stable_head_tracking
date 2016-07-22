@@ -12,11 +12,15 @@
     
     
     //Make very similar but abstractable interface for ACC
-    [NSTimer scheduledTimerWithTimeInterval:0.001
-                                     target:self
-                                   selector:@selector(onTick:)
-                                   userInfo:nil
-                                    repeats:YES];
+    //[NSTimer scheduledTimerWithTimeInterval:2.0
+    //                                 target:self
+    //                               selector:@selector(onTick:)
+    //                               userInfo:nil
+    //                                repeats:YES];
+    
+    FilterViewController *vc = self.viewController.parentViewController;
+    vc.delegate = self;
+    NSLog(vc.connection);
     
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString: @"OK"];
     [self writeJavascript: [pluginResult toSuccessCallbackString:callbackID]];
@@ -33,6 +37,10 @@
     NSString *js = [NSString stringWithFormat:@"updateContent( '%@' );", dateString];
     
     [self writeJavascript:js];
+}
+
+-(void)say:(NSString *)it {
+    NSLog(it);
 }
 
 @end
