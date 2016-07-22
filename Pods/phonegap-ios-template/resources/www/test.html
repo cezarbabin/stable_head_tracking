@@ -1,62 +1,72 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--
+ Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+ 
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+
+<!DOCTYPE html>
+<html>
     <head>
+        <title></title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
         <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <title></title>
-                <meta name="description" content="">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                        
-                        
-                        <script type="text/javascript" src="cordova.js"></script>
-                        <script type="text/javascript" src="js/three.min.js"></script>
-                        <script type="text/javascript" src="js/stats.min.js"></script>
-                        <script src="js/KeyboardState.js"></script>
-                        <script src="js/FirstPersonControls.js"></script>
-                        <script src="js/OrbitControls.js"></script>
-                        <script type="text/javascript">
-                            
-                            function doStart() {
-                                console.log('hi');
-                                CustomPlugin.start( successCallback );
-                            }
-                        
-                        function successCallback() {
-                            document.getElementById( "status" ).innerHTML = "started";
-                        }
-                        
-                        function updateContent( data ) {
-                            
-                            document.getElementById( "output" ).innerHTML = data;
-                        }
-                        
-                        
-                            </script>
-                        
-                        <link rel="stylesheet" type="text/css" href="css/test.css" />
-                        
-                        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-                        </head>
-    <body>
-        <!--[if lt IE 7]>
-         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-         <![endif]-->
-        
-        <!-- <div id="world"></div> -->
-        <a href="javascript:doStart()">Start!</a> 
-        <div id="world"></div> 
-        <div id="speedMeter" style="width:800px; margin:0 auto;">
             
-            <h1 style=" position:absolute;"> 25 </h1>
-        </div> 
-        <canvas id="resolution"></canvas>
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/CustomPlugin.js"></script>
+            <script type="text/javascript" src="js/three.min.js"></script>
+            <script type="text/javascript" src="js/stats.min.js"></script>
+            <script src="js/KeyboardState.js"></script>
+            <script src="js/FirstPersonControls.js"></script>
+            <script src="js/OrbitControls.js"></script>
+            <script type="text/javascript" src="js/test_rowing.js"></script>
+            <link rel="stylesheet" type="text/css" href="css/test.css" />
+            
+            <!--
+             <script type="text/javascript">
+             
+             function doStart() {
+             console.log('hi');
+             CustomPlugin.start( successCallback );
+             }
+             
+             function successCallback() {
+             document.getElementById( "status" ).innerHTML = "started";
+             }
+             
+             function updateContent( data ) {
+             
+             document.getElementById( "output" ).innerHTML = data;
+             }
+             -->
+            
+            </script>
+            </head>
+    <body onload="onBodyLoad()">
         
+        <!-- <a href="javascript:doStart()">Start!</a> -->
         
+        <h4 id="status"></h4>
+        <h2 id="output"></h2>
+        <div id="world"></div>
+        <div id="speedMeter" style="width:800px; margin:0 auto;">
+        </div>
         
     </body>
-    <script type="text/javascript" src="js/test_rowing.js"></script>
-    
 </html>

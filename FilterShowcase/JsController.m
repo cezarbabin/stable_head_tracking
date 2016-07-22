@@ -49,10 +49,10 @@
     // View defaults to full size.  If you want to customize the view's size, or its subviews (e.g. webView),
     // you can do so here.
     CGRect viewBounds = self.view.bounds;
-    CGRect webViewBound = CGRectMake(viewBounds.origin.x,
-                                     viewBounds.origin.y + 50,
-                                     viewBounds.size.width,
-                                     viewBounds.size.height - 40);
+    CGRect webViewBound = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
+    //self.webView.scrollView.scrollEnabled = NO;
+    self.webView.scrollView.bounces = NO;
     
     self.webView.frame = webViewBound;
     self.webView.backgroundColor = [UIColor clearColor];
