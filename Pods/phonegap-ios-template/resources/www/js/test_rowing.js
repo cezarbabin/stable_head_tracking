@@ -1,5 +1,26 @@
 
 //doStart();
+var head = "initialized";
+
+function doStart() {
+    CustomPlugin.start( successCallback );
+    var head = "center";
+}
+
+function setHead(position){
+    head = position;
+    
+}
+
+function successCallback() {
+    //document.getElementById( "status" ).innerHTML = "started";
+}
+
+function updateContent( data ) {
+    
+    //document.getElementById( "output" ).innerHTML = data;
+}
+
 
 var scene,
 		camera, fieldOfView, aspectRatio, nearPlane, farPlane, HEIGHT, WIDTH,
@@ -41,6 +62,7 @@ function init() {
 	createPlayer();
 	createEnemy();
 	//createSky();
+    
 
 	// start a loop that will update the objects' positions 
 	// and render the scene on each frame
@@ -532,9 +554,14 @@ function loop(){
 
 	// call the loop function again
 	requestAnimationFrame(loop);
+    
+    if (k>2 && head == "initialized")
+        doStart();
+   
 }
 
 function disposeOfRoad(el){
+    
 
 	for (var obj in el.children) {
 		console.log('here');
@@ -606,8 +633,7 @@ function addAnother() {
 
 	// push it a little bit at the bottom of the scene
 	console.log(k);
-    if (head == "initialized")
-        doStart();
+    
 
 	temp.mesh.position.z = -580 * 4;
 	tempObst.mesh.position.z = -580 * 4;
