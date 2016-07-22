@@ -14,39 +14,30 @@
                         <viewControllerLayoutGuide type="bottom" id="XGe-0x-MOy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OBY-Uk-LmH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7L-1C-rwK">
-                                <rect key="frame" x="180" y="219" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="12" width="320" height="556"/>
                                 <connections>
                                     <segue destination="mWJ-jA-1CE" kind="embed" id="YOt-5v-U5i"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L21-aa-PE3">
-                                <rect key="frame" x="270" y="122" width="60" height="30"/>
-                                <state key="normal" title="delegate"/>
-                                <connections>
-                                    <action selector="butPressed:" destination="NKC-H8-U2o" eventType="touchUpInside" id="70L-5o-CW4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="but" destination="L21-aa-PE3" id="deo-lo-xbO"/>
-                    </connections>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sP-Uc-h7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="1033"/>
+            <point key="canvasLocation" x="467" y="889"/>
         </scene>
         <!--Js Controller-->
         <scene sceneID="ejA-dg-7tl">
             <objects>
                 <viewController id="mWJ-jA-1CE" customClass="JsController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fxz-eG-QvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

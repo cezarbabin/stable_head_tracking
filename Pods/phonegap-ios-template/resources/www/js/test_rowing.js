@@ -1,4 +1,6 @@
 
+//doStart();
+
 var scene,
 		camera, fieldOfView, aspectRatio, nearPlane, farPlane, HEIGHT, WIDTH,
 		renderer, container, clock;
@@ -23,7 +25,9 @@ window.addEventListener('load', init, false);
 
 function init() {
 	// set up the scene, the camera and the renderer
+    //doStart();
 	createScene();
+    
 
 	// add the lights
 	createLights();
@@ -499,6 +503,8 @@ var speed = 3;
 var k = 0;
 function loop(){
 	stats.update();
+    
+    //player.mesh.translateX(head);
 	//player.updateHairs();
 	//console.log(mountainArray);
 	//console.log(obstArray);
@@ -566,10 +572,14 @@ function updateKeyboard(){
 
 	var mesh = player.mesh;
 
-	var moveDistance = 50 * clock.getDelta(); 
+	var moveDistance = 100 * clock.getDelta();
 	if ( keyboard.down("left") ) 
 		mesh.translateX( -50 );
-		//console.log('left');
+    if ( head == "left")
+        mesh.translateX( -moveDistance );
+    if ( head == "right")
+        mesh.translateX( moveDistance );
+    //console.log('left');
 	if ( keyboard.down("right") ) 
 		mesh.translateX(  50 );
 	if ( keyboard.pressed("A") )
@@ -596,6 +606,8 @@ function addAnother() {
 
 	// push it a little bit at the bottom of the scene
 	console.log(k);
+    if (head == "initialized")
+        doStart();
 
 	temp.mesh.position.z = -580 * 4;
 	tempObst.mesh.position.z = -580 * 4;

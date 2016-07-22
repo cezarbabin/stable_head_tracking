@@ -122,7 +122,11 @@
     //NSLog(@"Faces thinking");
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 	CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
-	CIImage *convertedImage = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer options:(__bridge NSDictionary *)attachments];
+	CIImage *convertedImageTemp = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer options:(__bridge NSDictionary *)attachments];
+    
+    CIImage *convertedImage = [convertedImageTemp imageByApplyingOrientation:UIImageOrientationUpMirrored];
+    
+    //[convertedImage orientation:UIImageOrientationUpMirrored];
     
 	if (attachments)
 		CFRelease(attachments);
@@ -243,12 +247,15 @@
             if (faceRect.origin.x > 120) {
                 //self.directionLabel.text = @"right";
                 [self.filterSettingsSlider setValue:1.5];
+                [delegate say:(NSString *)@"right"];
             } else if (faceRect.origin.x < 60) {
                 //self.directionLabel.text = @"left";
                 [self.filterSettingsSlider setValue:0.5];
+                [delegate say:(NSString *)@"left"];
             } else {
                 //self.directionLabel.text = @"center";
                 [self.filterSettingsSlider setValue:1.0];
+                [delegate say:(NSString *)@"center"];
             }
             
             faceRect = CGRectOffset(faceRect, previewBox.origin.x, previewBox.origin.y);

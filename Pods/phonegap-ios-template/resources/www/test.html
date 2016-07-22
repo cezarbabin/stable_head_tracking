@@ -35,37 +35,44 @@
             <script src="js/KeyboardState.js"></script>
             <script src="js/FirstPersonControls.js"></script>
             <script src="js/OrbitControls.js"></script>
-            <script type="text/javascript" src="js/test_rowing.js"></script>
+            
             <link rel="stylesheet" type="text/css" href="css/test.css" />
             
             
              <script type="text/javascript">
+                 
+            var head = 'initialized';
              
              function doStart() {
-             console.log('hi');
-             CustomPlugin.start( successCallback );
+                CustomPlugin.start( successCallback );
+             }
+             
+             function setHead(position){
+                 head = position;
+                 
              }
              
              function successCallback() {
-             document.getElementById( "status" ).innerHTML = "started";
+                 //document.getElementById( "status" ).innerHTML = "started";
              }
              
              function updateContent( data ) {
              
-             document.getElementById( "output" ).innerHTML = data;
+             //document.getElementById( "output" ).innerHTML = data;
              }
              
             
             </script>
+             <script type="text/javascript" src="js/test_rowing.js"></script>
             </head>
     <body onload="onBodyLoad()">
         
+        <!--
          <a href="javascript:doStart()">Start!</a>
         
-        <h4 id="status"></h4>
-        <h2 id="output"></h2>
-        <!--<div id="world"></div> -->
-        <div id="speedMeter" style="width:800px; margin:0 auto;">
+        //<h4 id="status"></h4>
+        <h2 id="output"></h2> -->
+        <div id="world"></div>
         </div>
         
     </body>

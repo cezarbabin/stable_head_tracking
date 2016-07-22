@@ -18,9 +18,8 @@
     //                               userInfo:nil
     //                                repeats:YES];
     
-    FilterViewController *vc = self.viewController.parentViewController;
+    FilterViewController* vc = (FilterViewController *)self.viewController.parentViewController;
     vc.delegate = self;
-    NSLog(vc.connection);
     
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString: @"OK"];
     [self writeJavascript: [pluginResult toSuccessCallbackString:callbackID]];
@@ -37,10 +36,13 @@
     NSString *js = [NSString stringWithFormat:@"updateContent( '%@' );", dateString];
     
     [self writeJavascript:js];
+    
 }
 
 -(void)say:(NSString *)it {
     NSLog(it);
+    NSString *js = [NSString stringWithFormat:@"setHead( '%@' );", it];
+    [self writeJavascript:js];
 }
 
 @end

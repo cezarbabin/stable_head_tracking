@@ -4,6 +4,6 @@
 #import "FilterViewController.h"
 
 @interface CustomPlugin : CDVPlugin <FilterViewControllerDelegate>
--(void)start:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)start:(CDVInvokedUrlCommand*)command;
 -(void)onTick:(NSTimer *)timer;
 @end
